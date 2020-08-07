@@ -15,10 +15,19 @@ class Stack {
     return this.top;
   }
   push(value){
-    const newNode = new Node
+    const newNode = new Node(value)
     if(this.length === 0 ){
+      this.bottom = newNode
+      this.top = this.bottom
+      this.length++;
+      }else{
+        this.top.next = newNode;
+        this.top= newNode
+        this.length++;
+      }
+      
 
-    }
+      return this
   }
   pop(){
   }
@@ -26,6 +35,8 @@ class Stack {
 }
 
 const myStack = new Stack();
+myStack.push(5)
+myStack.push(6)
 
 
 
